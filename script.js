@@ -21,6 +21,25 @@ function handleLogin(event) {
   }
 }
 
+function handleRegistration(event) {
+  event.preventDefault();
+  const password = document.getElementById('registrationPassword').value;
+  const confirmPassword = document.getElementById('confirmPassword').value;
+  const alert = document.getElementById('registrationAlert');
+
+  if (password !== confirmPassword) {
+    alert.className = 'alert alert-error';
+    alert.innerText = 'As senhas não coincidem.';
+    alert.style.display = 'block';
+    return;
+  }
+
+  alert.className = 'alert alert-success';
+  alert.innerText = 'Cadastro criado com sucesso! Você já pode entrar na Área do Usuário.';
+  alert.style.display = 'block';
+  event.target.reset();
+}
+
 function selectPreset(value, button) {
   document.querySelectorAll('.preset-btn').forEach(btn => btn.classList.remove('selected'));
   button.classList.add('selected');

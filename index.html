@@ -22,6 +22,7 @@
           <li><a href="#" class="nav-link" onclick="switchPage('horarios', this)">Quadro de Horário</a></li>
           <li><a href="#" class="nav-link" onclick="switchPage('passes', this)">Informações de Passes</a></li>
           <li><a href="#" class="nav-link" onclick="switchPage('recarga', this)">Recarga de Passes</a></li>
+          <li><a href="#" class="nav-link" onclick="switchPage('cadastro', this)">Cadastro</a></li>
         </ul>
       </nav>
       <div class="user-status" id="userStatus">
@@ -73,7 +74,8 @@
             <label for="password">Senha</label>
             <input type="password" id="password" placeholder="••••••••" required>
           </div>
-          <button type="submit" class="btn">Entrar</button>
+          <button type="submit" class="btn">Entrar</button> 
+          <button type="button" class="btn cadastro" onclick="switchPage('cadastro')">Cadastrar</button>
         </form>
       </div>
 
@@ -122,6 +124,38 @@
 
       </div>
 
+    </section>
+
+    <!-- Página de Cadastro -->
+    <section id="cadastro" class="page">
+      <div class="auth-card">
+        <h2>Crie sua conta</h2>
+        <p class="auth-intro">Cadastre seus dados para acompanhar e recarregar seu passe.</p>
+        <form onsubmit="handleRegistration(event)">
+          <div class="form-group">
+            <label for="fullName">Nome completo</label>
+            <input type="text" id="fullName" placeholder="Digite seu nome completo" required>
+          </div>
+          <div class="form-group">
+            <label for="registrationCpf">CPF</label>
+            <input type="text" id="registrationCpf" placeholder="000.000.000-00" required>
+          </div>
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" placeholder="voce@exemplo.com" required>
+          </div>
+          <div class="form-group">
+            <label for="registrationPassword">Senha</label>
+            <input type="password" id="registrationPassword" minlength="6" placeholder="Mínimo de 6 caracteres" required>
+          </div>
+          <div class="form-group">
+            <label for="confirmPassword">Confirme sua senha</label>
+            <input type="password" id="confirmPassword" minlength="6" placeholder="Repita sua senha" required>
+          </div>
+          <div id="registrationAlert" class="alert" role="status"></div>
+          <button type="submit" class="btn">Criar cadastro</button>
+        </form>
+      </div>
     </section>
   </main>
   <footer>
